@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- App 样式中引用的颜色 -->
+    <color name="colorPrimary">#13C2C2</color>
+    <color name="colorPrimaryDark">#13C2C2</color>
+    <color name="colorAccent">#13C2C2</color>
+
+    <color name="line">#73FFFFFF</color>
+    <color name="text_green">#2BB6B3</color>
+    <color name="app">#2BB6B3</color>
+
+</resources>
