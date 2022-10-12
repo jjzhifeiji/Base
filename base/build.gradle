@@ -27,8 +27,12 @@ android {
     dataBinding {
         enabled true
     }
+
     namespace 'com.zhifeiji.base'
 
+    kotlinOptions {
+        jvmTarget = '11'
+    }
 
 }
 
