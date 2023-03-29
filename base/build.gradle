@@ -58,7 +58,6 @@ dependencies {
     api "com.google.android.material:material:1.8.0"
     api 'com.google.code.gson:gson:2.10.1'
     api 'com.blankj:utilcodex:1.31.0'
-    api 'com.github.getActivity:XXPermissions:15.0'
 
     api 'commons-net:commons-net:3.8.0'
 
