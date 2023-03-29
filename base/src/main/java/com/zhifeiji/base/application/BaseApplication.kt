@@ -12,10 +12,12 @@ open class BaseApplication : Application(), ViewModelStoreOwner {
 
     companion object {
         lateinit var appContext: Context
-        private var mAppViewModelStore: ViewModelStore? = null
+        lateinit var mAppViewModelStore: ViewModelStore
         var sDebug = false
     }
 
+    override val viewModelStore: ViewModelStore
+        get() = mAppViewModelStore
 
     fun setDebug(debug: Boolean) {
         sDebug = debug
@@ -25,7 +27,7 @@ open class BaseApplication : Application(), ViewModelStoreOwner {
         super.onCreate()
         appContext = this
         Utils.init(this);
-        mAppViewModelStore = ViewModelStore();
+        mAppViewModelStore = ViewModelStore()
 
     }
 
@@ -38,7 +40,4 @@ open class BaseApplication : Application(), ViewModelStoreOwner {
     }
 
 
-    override fun getViewModelStore(): ViewModelStore {
-        return mAppViewModelStore!!
-    }
 }
