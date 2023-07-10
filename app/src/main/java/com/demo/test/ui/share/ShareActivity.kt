@@ -4,8 +4,6 @@ import android.Manifest
 import android.os.Bundle
 import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.ToastUtils
-import com.hjq.permissions.OnPermissionCallback
-import com.hjq.permissions.XXPermissions
 import com.demo.test.ui.base.HYActivity
 import com.hy.dihome.databinding.ActivityShareBinding
 
@@ -55,32 +53,6 @@ class ShareActivity : HYActivity() {
 
     private fun go() {
 
-    }
-
-    private fun checkPermission() {
-        LogUtils.d("onCreate PermissionsAspect aroundJoinPoint")
-
-        XXPermissions.with(this)
-            .permission(permissions)
-            .request(object : OnPermissionCallback {
-                override fun onGranted(permissions: List<String>, all: Boolean) {
-                    if (!all) {
-                        ToastUtils.showShort("获取部分权限成功，但部分权限未正常授予")
-                    } else {
-                        go()
-                    }
-                }
-
-                override fun onDenied(permissions: List<String>, never: Boolean) {
-                    if (never) {
-                        ToastUtils.showShort("被永久拒绝授权")
-                        // 如果是被永久拒绝就跳转到应用权限系统设置页面
-                        XXPermissions.startPermissionActivity(this@ShareActivity, permissions)
-                    } else {
-                        ToastUtils.showShort("获取权限失败")
-                    }
-                }
-            })
     }
 
     companion object {

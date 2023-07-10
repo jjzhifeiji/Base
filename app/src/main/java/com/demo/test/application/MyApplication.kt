@@ -2,7 +2,6 @@ package com.demo.test.application
 
 import android.content.Context
 import androidx.core.content.ContextCompat
-import androidx.work.Configuration
 import com.blankj.utilcode.util.ToastUtils
 import com.blankj.utilcode.util.Utils
 import com.demo.test.viewmodel.AppViewModel
@@ -11,7 +10,7 @@ import com.zhifeiji.base.application.BaseApplication
 import com.zhifeiji.base.manager.ActivityManager
 
 
-open class MyApplication : BaseApplication(), Configuration.Provider {
+open class MyApplication : BaseApplication() {
 
 
     companion object {
@@ -73,9 +72,4 @@ open class MyApplication : BaseApplication(), Configuration.Provider {
     private fun initDataBase() {
     }
 
-    override fun getWorkManagerConfiguration() =
-        Configuration.Builder()
-            .setDefaultProcessName("com.demo.test.background.multiprocess")
-            .setMinimumLoggingLevel(android.util.Log.DEBUG)
-            .build()
 }

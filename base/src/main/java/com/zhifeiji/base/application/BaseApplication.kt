@@ -16,8 +16,9 @@ open class BaseApplication : Application(), ViewModelStoreOwner {
         var sDebug = false
     }
 
-    override val viewModelStore: ViewModelStore
-        get() = mAppViewModelStore
+    override fun getViewModelStore(): ViewModelStore {
+        return mAppViewModelStore
+    }
 
     fun setDebug(debug: Boolean) {
         sDebug = debug
